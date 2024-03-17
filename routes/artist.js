@@ -13,8 +13,8 @@ router.delete('/:id', artistController.deleteArtist);
 /*
 router.get('/', util.handleErrors(artistController.getAllArtists));
 router.get('/:id', util.handleErrors(artistController.getSingleArtist));
-router.post('/', util.handleErrors(artistController.createArtist));
-router.put('/:id',util.handleErrors(artistController.updateArtist));
+router.post('/',validator.artistValidationRules(),validator.validate, util.handleErrors(artistController.createArtist));
+router.put('/:id',validator.artistValidationRules(),validator.validate, util.handleErrors(artistController.updateArtist));
 router.delete('/:id',util.handleErrors(artistController.deleteArtist));
 */
 module.exports = router;
