@@ -5,23 +5,12 @@
     "description": "Users Api",
     "version": "1.0.0"
   },
-  "host": "localhost:3500",
+  "host": "cse341project2-artgallery.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/artist/": {
       "get": {
         "tags": [
