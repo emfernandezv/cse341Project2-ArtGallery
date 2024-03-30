@@ -32,13 +32,11 @@ const getSingleArtwork = async (req, res, next) => {
 const createArtwork = async (req, res) => {
     //#swagger.tags=['Artwork']
     const artwork = {
-        firstName: req.body.firstName,
-        middleName: req.body.middleName,
-        lastName: req.body.lastName,
-        yearOfBirth: req.body.yearOfBirth,
-        yearOfDeath: req.body.yearOfDeath,
-        country: req.body.country,
-        sex: req.body.sex
+        title: req.body.title,
+        year: req.body.year,
+        period: req.body.period,
+        type: req.body.type,
+        file: req.body.file
     };
 
     const response = await mongodb.getDatabase().db().collection('artwork').insertOne(artwork);
@@ -56,13 +54,11 @@ const updateArtwork = async (req, res) => {
     //#swagger.tags=['Artwork']
    const artworkId = new ObjectId(req.params.id);
    const artwork = {
-        firstName: req.body.firstName,
-        middleName: req.body.middleName,
-        lastName: req.body.lastName,
-        yearOfBirth: req.body.yearOfBirth,
-        yearOfDeath: req.body.yearOfDeath,
-        country: req.body.country,
-        sex: req.body.sex
+        title: req.body.title,
+        year: req.body.year,
+        period: req.body.period,
+        type: req.body.type,
+        file: req.body.file
    };
 
    const response = await mongodb.getDatabase().db().collection('artwork').replaceOne({_id: artworkId}, artwork);
